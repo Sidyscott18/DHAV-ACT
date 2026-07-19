@@ -1,0 +1,10 @@
+purchase <- c(250,300,320,350,380,450,520,650,1800,5200)
+
+hist(purchase,
+     probability=TRUE,
+     main="Histogram of Purchase Amount",
+     xlab="Purchase Amount")
+
+lines(density(purchase),
+      col="blue",
+      lwd=2)
