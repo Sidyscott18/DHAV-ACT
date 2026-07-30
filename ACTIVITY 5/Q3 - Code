@@ -1,0 +1,28 @@
+months <- c("Jan","Feb","Mar","Apr","May","Jun",
+            "Jul","Aug","Sep","Oct","Nov","Dec")
+
+sales <- c(120,135,150,170,190,220,
+           210,230,250,270,290,320)
+
+plot(
+  sales,
+  type = "o",
+  pch = 19,
+  xaxt = "n",
+  col = "blue",
+  xlab = "Month",
+  ylab = "Sales (₹ Lakhs)",
+  main = "Monthly Sales"
+)
+
+axis(1,
+     at = 1:12,
+     labels = months)
+
+grid()
+
+max_month <- months[which.max(sales)]
+max_sales <- max(sales)
+
+cat("Month with Maximum Sales:", max_month, "\n")
+cat("Maximum Sales:", max_sales, "Lakhs\n")
