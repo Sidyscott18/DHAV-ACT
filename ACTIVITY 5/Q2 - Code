@@ -1,0 +1,25 @@
+library(igraph)
+
+edges <- data.frame(
+  From = c("A","A","B","C","C","D","E","F","G","H"),
+  To   = c("B","C","D","D","E","E","F","G","H","A")
+)
+
+g <- graph_from_data_frame(edges, directed = FALSE)
+
+plot(
+  g,
+  layout = layout_in_circle(g),
+  vertex.color = "skyblue",
+  vertex.size = 30,
+  vertex.label.color = "black",
+  vertex.label.cex = 1.2,
+  edge.color = "gray",
+  main = "Network Graph"
+)
+
+deg <- degree(g)
+
+print(deg)
+
+cat("Node with Highest Connections:", names(which.max(deg)))
